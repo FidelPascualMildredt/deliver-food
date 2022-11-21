@@ -17,6 +17,7 @@ class UserController extends Controller
          //Definimos nuestra vista
         // return User::all();
         $users = User::all();
+       
         return view('users.index',compact('users'));
     }
 
@@ -50,7 +51,7 @@ class UserController extends Controller
 
 
         ];
-        $this->validate($request, $rules);
+        // $this->validate($request, $rules);
 
         User::create([
             'nombre' => $request->get('nombre'),
@@ -76,7 +77,7 @@ class UserController extends Controller
     public function show($id)
     {
         $users = User::find($id);
-        // dd($users);
+
         return view('users.show', compact('users'));
     }
 
@@ -111,7 +112,7 @@ class UserController extends Controller
             'telefono' => 'requered|unique',
             'contrasena' => 'requered|unique,contrasena',
         ];
-        $this->validate($request, $rules);
+        // $this->validate($request, $rules);
 
         $users->update([
             'nombre' => $request->get('nombre'),

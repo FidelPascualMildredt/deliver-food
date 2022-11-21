@@ -21,8 +21,8 @@
                 </div>
                 <div class="form-group">
                     <label>Nickname</label>
-                    <input type="text" name="nombre" class="form-control" placeholder="Ingresa el nickname" value="{{ old('nickname') ? old('nickname') : $users->nickname}}">
-                    @error('nombre')
+                    <input type="text" name="nickname" class="form-control" placeholder="Ingresa el nickname" value="{{ old('nickname') ? old('nickname') : $users->nickname}}">
+                    @error('nickname')
                         <small class="form-text text-danger">{{$message}}</small>
                     @enderror
                 </div>
@@ -33,7 +33,7 @@
                         <small class="form-text text-danger">{{$message}}</small>
                     @enderror
                 </div>
-                </div>
+
                 <div class="form-group">
                     <label>Telefono</label>
                     <input type="tel" name="telefono" class="form-control" placeholder="Ingresa el telefono" value="{{ old('telefono') ? old('telefono') : $users->telefono}}">
@@ -51,13 +51,13 @@
 
                 <div class="form-group">
                     <label>Tipo de Usuario</label>
-                    <select class="form-control form-select" name="tipo_usuario">
-                        <option value="Elegir" >Seleccione tipo de usuario</option>
+                    <select class="form-control form-select" name="'tipo_usuarios_id'">
+                        <option value="Elegir" {{old('tipo_usuarios_id' ? '' : 'selected')}}>Seleccione tipo de usuario</option>
                         @foreach ($tipo_usuarios as $tipo_usuario)
                         <option value="{{$tipo_usuario->id}}" {{$tipo_usuario->id == $users->tipo_usuario->id ? 'selected' : ''}} {{old('tipo_usuario') == $tipo_usuario->id ? 'selected' : ''}}>{{$tipo_usuario->nombre}}</option>
                         @endforeach
                     </select>
-                    @error('tipo_usuario')
+                    @error('tipo_usuarios_id')
                         <small class="form-text text-danger">{{$message}}</small>
                     @enderror
                 </div>

@@ -30,7 +30,8 @@
                 <td>{{ $user->telefono }}</td>
                 <td><img width="150px" height="150px" src="{{ $user->imagen }}" alt="{{ $user->nombre }}"></td>
                 <td>{{ $user->contrasena }}</td>
-                <td>{{ $user->tipo_usuarios_id}}</td>
+                {{--  <td>{{ $user->tipo_usuarios_id}}</td>  --}}
+                <td>{{ $user->tipo_usuario->nombre}}</td>
 
                 {{--  <td>{{ $user->tipo_usuarios_id }}</td>  --}}
 
