@@ -16,8 +16,8 @@ class UserController extends Controller
     {
          //Definimos nuestra vista
         // return User::all();
-        $users = User::all();
-       
+        $users = User::paginate(5);
+
         return view('users.index',compact('users'));
     }
 

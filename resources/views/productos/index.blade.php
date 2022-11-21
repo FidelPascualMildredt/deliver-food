@@ -19,7 +19,7 @@
         <th>Imagen</th>
         <th>Negocios</th>
         <th>Cátegorias</th>
-        <th>Acciones</th>
+        <th>Opciones</th>
     </x-slot>
     <x-slot name='cuerpo'>
         @foreach ($productos as $item)
@@ -33,9 +33,11 @@
                 <td>
                     <img width="150px" height="150px" src="{{ $item->imagen }}" alt="{{ $item->nombre }}">
                 </td>
+                <td>{{ $item->negocios->nombre }}</td>
+                <td>{{ $item->categorias->nombre }}</td>
 
-                <td>{{ $item->negocios_id }}</td>
-                <td>{{ $item->categorias_id }}</td>
+                {{--  <td>{{ $item->negocios_id->nombre }}</td>
+                <td>{{ $item->categorias_id->nombre}}</td>  --}}
 
 
                 <td>
@@ -55,4 +57,5 @@
         @endforeach
     </x-slot>
 </x-table>
+{{$productos->links()}}
 @endsection

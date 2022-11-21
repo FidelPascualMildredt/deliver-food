@@ -59,4 +59,5 @@
         @endforeach
     </x-slot>
 </x-table>
+{{$users->links()}}
 @endsection

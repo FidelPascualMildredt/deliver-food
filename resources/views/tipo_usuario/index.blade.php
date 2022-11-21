@@ -43,4 +43,5 @@
         @endforeach
     </x-slot>
 </x-table>
+{{$tipo_usuarios->links()}}
 @endsection

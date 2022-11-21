@@ -16,8 +16,9 @@ class NegocioController extends Controller
     public function index()
     {
          //Definimos nuestra vista
-         $negocio = Negocio::all();
-         return view('negocios.index',compact('negocio'));
+         $negocios = Negocio::paginate(5);
+        //  dd($negocios);
+         return view('negocios.index',compact('negocios'));
     }
 
     /**
@@ -70,9 +71,9 @@ class NegocioController extends Controller
           // $categorias = Categoria::all();
 
         // $categorias = Categoria::where('tipo_cat','negocio')->get();
-        $negocio = Negocio::find($id);
+        $negocios = Negocio::find($id);
         // return view('negocios.show', compact('categorias'));
-        return view('negocios.show', compact('negocio'));
+        return view('negocios.show', compact('negocios'));
     }
 
     /**
@@ -83,8 +84,8 @@ class NegocioController extends Controller
      */
     public function edit($id)
     {
-        $negocio = Negocio::find($id);
-        return view('negocios.edit', compact('negocio'));
+        $negocios = Negocio::find($id);
+        return view('negocios.edit', compact('negocios'));
     }
 
     /**
@@ -96,7 +97,7 @@ class NegocioController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $negocio = Negocio::find($id);
+        $negocios = Negocio::find($id);
 
 
         // $rules = [
@@ -115,7 +116,7 @@ class NegocioController extends Controller
 
 
         // $this->validate($request, $rules);
-        $negocio->update([
+        $negocios->update([
 
         'nombre' => $request->get('nombre'),
         'direccion' => $request->get('direccion'),
@@ -137,8 +138,8 @@ class NegocioController extends Controller
      */
     public function destroy($id)
     {
-        $negocio = Negocio::findOrFail($id);
-        $negocio->delete();
+        $negocios = Negocio::findOrFail($id);
+        $negocios->delete();
         return back()->with('error','El negocio se a eliminado');
     }
 }

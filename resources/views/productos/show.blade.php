@@ -13,8 +13,8 @@
             <h5 class="card-title">Calificacion: {{$producto->calificacion}}</h5>
             <h5 class="card-title">Stock: {{$producto->stock}}</h5>
             <h5 class="card-title">Imagen: {{$producto->imagen}}</h5>
-            <h5 class="card-title">Negocio_id: {{$producto->negocios_id}}</h5>
-            <h5 class="card-title">Categoria_id: {{$producto->categorias_id}}</h5>
+            <h5 class="card-title">Negocio_id: {{$producto->negocios->nombre}}</h5>
+            <h5 class="card-title">Categoria_id: {{$producto->categorias->nombre}}</h5>
             <a href="{{ route('productos.index') }}"  class="btn btn-success mt-2">
                 Regresar
             </a>

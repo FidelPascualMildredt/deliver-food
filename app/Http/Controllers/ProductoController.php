@@ -17,7 +17,7 @@ class ProductoController extends Controller
     public function index()
     {
          //Definimos nuestra vista
-         $productos = Producto::all();
+         $productos = Producto::paginate(2);
          return view('productos.index',compact('productos'));
     }
 
@@ -29,6 +29,7 @@ class ProductoController extends Controller
     public function create()
     {
         $categorias = Categoria::where('tipo_cat','producto')->get();
+        dd($categorias);
         return view('productos.create', compact('categorias'));
     }
 

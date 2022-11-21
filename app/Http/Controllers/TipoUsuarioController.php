@@ -15,7 +15,7 @@ class TipoUsuarioController extends Controller
     public function index()
     {
          //Definimos nuestra vista
-         $tipo_usuarios = Tipo_usuario::all();
+         $tipo_usuarios = Tipo_usuario::paginate(5);
          return view('tipo_usuario.index',compact('tipo_usuarios'));
     }
 

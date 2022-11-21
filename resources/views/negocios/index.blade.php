@@ -15,15 +15,15 @@
             <th>#
             </th>
             <th>Nombre</th>
-            <th>Direccion</th>
+            <th>Dirección</th>
             <th>Correo</th>
-            <th>Telefono</th>
+            <th>Teléfono</th>
             <th>Calificacion</th>
-            <th>Categorias_id</th>
+            <th>Categoria</th>
             <th>Opciones</th>
         </x-slot>
         <x-slot name='cuerpo'>
-            @foreach ($negocio as $negocio)
+            @foreach ($negocios as $negocio)
                 <tr>
                     <td>{{ $negocio->id }}</td>
                     <td>{{ $negocio->nombre }}</td>
@@ -51,13 +51,12 @@
 
                                      {{--  <button class="btn btn-danger m-3" type="submit"><i class="fa-solid fa-trash"></i></button>  --}}
                                 </form>
-
                     </td>
                 </tr>
             @endforeach
         </x-slot>
     </x-table>
-{{--  revisar porque no me agarra  --}}
-    {{--  {{$negocio->links()}}  --}}
+
+    {{$negocios->links()}}
 
 @endsection
