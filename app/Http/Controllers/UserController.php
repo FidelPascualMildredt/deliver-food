@@ -42,16 +42,14 @@ class UserController extends Controller
     public function store(Request $request)
     {
         $rules = [
-            'nombre' => 'required|unique:users,nombre|min:5',
+            'nombre' => 'required|min:5',
             'nickname' => 'required|unique:users,nickname|max:10',
-            'correo' => 'required|unique,email',
-            'telefono' => 'required|unique|numeric|max:10',
-            'contrasena'=>  "required|min:8|max:30|same:password",
-            'tipo_usuarios_id' => 'required',
-
-
+            'correo' => 'required|unique:users',
+            'telefono' => 'required|unique:users|max:10',
+            'contrasena'=>  "required|min:8|max:30",
+            'tipo_usuarios_id' => 'required|not_in:Elegir'
         ];
-        // $this->validate($request, $rules);
+        $this->validate($request, $rules);
 
         User::create([
             'nombre' => $request->get('nombre'),
@@ -106,13 +104,15 @@ class UserController extends Controller
     {
         $users = User::find($id);
         $rules = [
-            'nombre' => 'required|unique:users,nombre|min:5',
-            'nickname' => 'required|unique:users,nickname|max:10',
-            'correo' => 'required|unique,correo',
-            'telefono' => 'requered|unique',
-            'contrasena' => 'requered|unique,contrasena',
+
+            'nombre' => 'required|min:5',
+            'nickname' => 'required:users,nickname|max:10',
+            'correo' => 'required:users',
+            'telefono' => 'required:users|max:10',
+            'contrasena'=>  "required|min:8|max:30",
+            'tipo_usuarios_id' => 'required|not_in:Elegir'
         ];
-        // $this->validate($request, $rules);
+        $this->validate($request, $rules);
 
         $users->update([
             'nombre' => $request->get('nombre'),

@@ -51,16 +51,18 @@
 
                 <div class="form-group">
                     <label>Tipo de Usuario</label>
-                    <select class="form-control form-select" name="'tipo_usuarios_id'">
+                    <select class="form-control form-select" name="tipo_usuarios_id">
                         <option value="Elegir" {{old('tipo_usuarios_id' ? '' : 'selected')}}>Seleccione tipo de usuario</option>
                         @foreach ($tipo_usuarios as $tipo_usuario)
-                        <option value="{{$tipo_usuario->id}}" {{$tipo_usuario->id == $users->tipo_usuario->id ? 'selected' : ''}} {{old('tipo_usuario') == $tipo_usuario->id ? 'selected' : ''}}>{{$tipo_usuario->nombre}}</option>
+                        <option value="{{$tipo_usuario->id}}" {{old('tipo_usuarios_id') == $tipo_usuario->id ? 'selected' : ''}}>{{$tipo_usuario->nombre}}</option>
                         @endforeach
                     </select>
                     @error('tipo_usuarios_id')
                         <small class="form-text text-danger">{{$message}}</small>
                     @enderror
                 </div>
+
+
                 <button type="submit" class="btn btn-primary mt-2">Guardar</button>
                 <a href="{{ route('users.index') }}"  class="btn btn-success mt-2">
                     Regresar

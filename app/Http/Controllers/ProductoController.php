@@ -29,7 +29,7 @@ class ProductoController extends Controller
     public function create()
     {
         $categorias = Categoria::where('tipo_cat','producto')->get();
-        dd($categorias);
+        // dd($categorias);
         return view('productos.create', compact('categorias'));
     }
 
@@ -130,6 +130,8 @@ class ProductoController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $productos = Producto::findOrFail($id);
+        $productos->delete();
+        return back()->with('error','El producto se a eliminado');
     }
 }

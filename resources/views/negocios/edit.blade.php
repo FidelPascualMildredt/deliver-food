@@ -8,7 +8,7 @@
         </div>
         <div class="card-body">
 
-            <form action="{{ route('negocio.update', ['negocio'=> $negocio->id]) }}" method="POST">
+            <form action="{{ route('negocio.update', ['negocio'=> $negocios->id]) }}" method="POST">
                 @method('PUT')
                 @csrf
                 {{--  <div class="form-group">
@@ -24,7 +24,7 @@
                 {{--  checar  --}}
                 <div class="form-group">
                     <label>Nombre</label>
-                    <input type="text" name="nombre" class="form-control" placeholder="Ingresa el nombre" value="{{old('nombre') ? old('nombre') : $negocio->nombre}}">
+                    <input type="text" name="nombre" class="form-control" placeholder="Ingresa el nombre" value="{{old('nombre') ? old('nombre') : $negocios->nombre}}">
                     @error('nombre')
                         <small class="form-text text-danger">{{$message}}</small>
                     @enderror
@@ -32,14 +32,14 @@
 
                 <div class="form-group">
                     <label>Direccion</label>
-                    <input type="text" name="direccion" class="form-control" placeholder="Ingresa la direccion" value="{{old('direccion') ? old('direccion') : $negocio->direccion}}">
+                    <input type="text" name="direccion" class="form-control" placeholder="Ingresa la direccion" value="{{old('direccion') ? old('direccion') : $negocios->direccion}}">
                     @error('direccion')
                         <small class="form-text text-danger">{{$message}}</small>
                     @enderror
                 </div>
                 <div class="form-group">
                     <label>Correo</label>
-                    <input type="email" name="correo" class="form-control" placeholder="Ingresa el correo" value="{{old('correo') ? old('correo') : $negocio->correo}}">
+                    <input type="email" name="correo" class="form-control" placeholder="Ingresa el correo" value="{{old('correo') ? old('correo') : $negocios->correo}}">
                     @error('correo')
                         <small class="form-text text-danger">{{$message}}</small>
                     @enderror
@@ -47,14 +47,14 @@
 
                 <div class="form-group">
                     <label>Telefono</label>
-                    <input type="Tel" name="telefono" class="form-control" placeholder="Ingresa el telefono" value="{{old('telefono') ? old('telefono') : $negocio->telefono}}">
+                    <input type="Tel" name="telefono" class="form-control" placeholder="Ingresa el telefono" value="{{old('telefono') ? old('telefono') : $negocios->telefono}}">
                     @error('telefono')
                         <small class="form-text text-danger">{{$message}}</small>
                     @enderror
                 </div>
                 <div class="form-group">
                     <label>Calificacion</label>
-                    <input type="number" name="calificacion" class="form-control" placeholder="Ingresa la calificacion" value="{{old('calificacion') ? old('calificacion') : $negocio->calificacion}}">
+                    <input type="number" name="calificacion" class="form-control" placeholder="Ingresa la calificacion" value="{{old('calificacion') ? old('calificacion') : $negocios->calificacion}}">
                     @error('calificacion')
                         <small class="form-text text-danger">{{$message}}</small>
                     @enderror
