@@ -31,7 +31,7 @@
                 {{--  <td>{{ $item->calificacion }}</td>  --}}
                 <td>{{ $item->stock }}</td>
                 <td>
-                    <img width="150px" height="150px" src="{{ $item->imagen }}" alt="{{ $item->nombre }}">
+                    <img width="150px" height="150px" src="{{ $producto->imagen }}" alt="{{ $producto->nombre }}">
                 </td>
 <<<<<<< HEAD
                 <td>{{ $producto->negocios }}</td>
