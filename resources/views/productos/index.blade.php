@@ -22,21 +22,26 @@
         <th>Opciones</th>
     </x-slot>
     <x-slot name='cuerpo'>
-        @foreach ($productos as $producto)
+        @foreach ($productos as $item)
             <tr>
-                <td>{{ $producto->id }}</td>
-                <td>{{ $producto->nombre }}</td>
-                <td>${{ $producto->precio }}</td>
-                <td>{{ $producto->descripcion }}</td>
-                {{--  <td>{{ $producto->calificacion }}</td>  --}}
-                <td>{{ $producto->stock }}</td>
+                <td>{{ $item->id }}</td>
+                <td>{{ $item->nombre }}</td>
+                <td>${{ $item->precio }}</td>
+                <td>{{ $item->descripcion }}</td>
+                {{--  <td>{{ $item->calificacion }}</td>  --}}
+                <td>{{ $item->stock }}</td>
                 <td>
-                    <img width="150px" height="150px" src="{{ $producto->imagen }}" alt="{{ $producto->nombre }}">
+                    <img width="150px" height="150px" src="{{ $item->imagen }}" alt="{{ $item->nombre }}">
                 </td>
+<<<<<<< HEAD
                 <td>{{ $producto->negocios }}</td>
                 <td>{{ $producto->categorias }}</td>
                 {{--  <td>{{ $producto->negocios->nombre }}</td>
                 <td>{{ $producto->categorias->nombre }}</td>  --}}
+=======
+                <td>{{ $item->negocios->nombre }}</td>
+                <td>{{ $item->categorias->nombre }}</td>
+>>>>>>> parent of 2d4e76e (validaciones)
 
                 {{--  <td>{{ $item->negocios_id->nombre }}</td>
                 <td>{{ $item->categorias_id->nombre}}</td>  --}}
@@ -45,22 +50,15 @@
                 <td>
 
 
-                    <a href="{{ route('productos.edit', ['producto'=> $producto->id]) }}" class="btn btn-success btn-circle btn-sm" title="Editar Producto">
+                    <a href="{{ route('productos.edit', ['producto'=> $item->id]) }}" class="btn btn-success btn-circle btn-sm" title="Editar Producto">
                         <i class="fas fa-edit"></i>
                     </a>
-                    <a href="{{ route('productos.show', ['producto'=> $producto->id]) }}" class="btn btn-info btn-circle btn-sm" title="Ver Producto">
+                    <a href="{{ route('productos.show', ['producto'=> $item->id]) }}" class="btn btn-info btn-circle btn-sm" title="Ver Producto">
                         <i class="fas fa-eye"></i>
                     </a>
-
-                    <form action="productos/{{$producto->id}}" method="POST">
-                        @csrf
-                         @method("delete")
-                                 <button  class="btn btn-danger btn-circle btn-sm" title="Eliminar Producto">
-                              <i class="fas fa-trash"></i></button>
-                        </form>
-                    {{--  <a href="#" class="btn btn-danger btn-circle btn-sm" title="Eliminar Tipo de Usuario">
+                    <a href="#" class="btn btn-danger btn-circle btn-sm" title="Eliminar Tipo de Usuario">
                         <i class="fas fa-trash"></i>
-                    </a>  --}}
+                    </a>
                 </td>
             </tr>
         @endforeach

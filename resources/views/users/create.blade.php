@@ -36,7 +36,7 @@
             </div>
             <div class="form-group">
                 <label>Telefono</label>
-                <input type="text" name="telefono" maxlength="10" class="form-control" placeholder="Ingresa numero de telefono" value="{{old('telefono')}}">
+                <input type="tel" name="telefono" class="form-control" placeholder="Ingresa numero de telefono" value="{{old('telefono')}}">
                 @error('telefono')
                     <small class="form-text text-danger">{{$message}}</small>
                 @enderror

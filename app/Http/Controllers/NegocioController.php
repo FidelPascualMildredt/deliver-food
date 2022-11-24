@@ -44,10 +44,8 @@ class NegocioController extends Controller
             'nombre' => "required|unique:negocios|min:5",
             'direccion'=> "required|unique:negocios",
             'correo'=> "required|unique:negocios|email",
-            'telefono' => 'required|numeric:users',
-            // 'telefono'=> "required|unique:negocios",
+            'telefono'=> "required|unique:negocios",
             'categoria'=> "required|not_in:Elegir"
-
         ];
         $this->validate($request, $rules);
 
@@ -101,7 +99,8 @@ class NegocioController extends Controller
     {
         $negocios = Negocio::find($id);
 
-        $rules = [
+
+        // $rules = [
 
         //     // 'nombre' => "required|unique:negocio,nombre,{$negocio->id}|min:5",
         //     'nombre' => "required|unique:negocios{$negocio->id}|min:5",
@@ -110,16 +109,13 @@ class NegocioController extends Controller
         //     'telefono'=> "required|unique:negocios{$negocio->id}",
         //     'calificacion'=> "calificacion{$negocio->id}",
         //     'categoria'=> "required|not_in:Elegir{$negocio->id}"
-        'nombre' => "required:negocios|min:5",
-        'direccion'=> "required:negocios",
-        'correo'=> "required:negocios|email",
-        'telefono' => 'required|numeric:users',
-        // 'telefono'=> "required|unique:negocios",
-        'categoria'=> "required|not_in:Elegir"
-        ];
 
-        $this->validate($request, $rules);
 
+
+        // ];
+
+
+        // $this->validate($request, $rules);
         $negocios->update([
 
         'nombre' => $request->get('nombre'),
