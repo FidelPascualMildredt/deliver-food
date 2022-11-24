@@ -37,11 +37,11 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 
 
-Route::Apiresource('categorias',CategoriaController::class);
-// Route::Apiresource('horarios',HorarioController::class);
-Route::Apiresource('negocio',NegocioController::class);
-// Route::Apiresource('pedidos',PedidoController::class);
-Route::Apiresource('productos',ProductoController::class);
-Route::Apiresource('tipo_usuarios',TipoUsuarioController::class);
-Route::Apiresource('users',UserController::class);
+// Route::Apiresource('categorias',CategoriaController::class);
+// // Route::Apiresource('horarios',HorarioController::class);
+// Route::Apiresource('negocio',NegocioController::class);
+// // Route::Apiresource('pedidos',PedidoController::class);
+// Route::Apiresource('productos',ProductoController::class);
+// Route::Apiresource('tipo_usuarios',TipoUsuarioController::class);
+// Route::Apiresource('users',UserController::class);
 

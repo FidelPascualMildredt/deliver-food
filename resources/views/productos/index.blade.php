@@ -33,8 +33,10 @@
                 <td>
                     <img width="150px" height="150px" src="{{ $producto->imagen }}" alt="{{ $producto->nombre }}">
                 </td>
-                <td>{{ $producto->negocios->nombre }}</td>
-                <td>{{ $producto->categorias->nombre }}</td>
+                <td>{{ $producto->negocios }}</td>
+                <td>{{ $producto->categorias }}</td>
+                {{--  <td>{{ $producto->negocios->nombre }}</td>
+                <td>{{ $producto->categorias->nombre }}</td>  --}}
 
                 {{--  <td>{{ $item->negocios_id->nombre }}</td>
                 <td>{{ $item->categorias_id->nombre}}</td>  --}}
